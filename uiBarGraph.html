@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="styles.css"></link>
+<div class="vertical"></div>
+<div class="horizontal"></div>
+<script>
+
+var dataObj={"data": [49, 8, 23, 57, 94, 78, 94, 54, 75, 63 ]};
+var data=dataObj.data;
+for(var i=0;i<data.length;i++){
+   var ele=document.createElement('div');
+    ele.setAttribute('title',data[i]);
+    ele.setAttribute('style','background:blue;display: inline-block;margin-left:20px;width:20px;height:'+data[i]+'px');
+    document.body.appendChild(ele);
+}
+
+</script>

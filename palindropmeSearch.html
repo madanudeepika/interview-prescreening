@@ -1,0 +1,40 @@
+<script>
+function fnFindPalindrome(input) {
+    var aPolydram = [];
+    var aChars=input.split('');
+    var aStrLen=[];
+    for (var i = 0; i < aChars.length; i++) {
+        var aTrunVal = aChars.slice(i, aChars.length);
+        var sTrunVal = aTrunVal.join('');
+        for (var j = 0; j < aTrunVal.length; j++) {
+            var aRevTrunVal = aTrunVal.reverse();
+            var sRefTrunVal = aRevTrunVal.join('');
+            if (sTrunVal == sRefTrunVal && sTrunVal.length != 1) {
+                aPolydram.push(sTrunVal);
+                aStrLen.push(sTrunVal.length);
+            }
+            aTrunVal.reverse();
+            aTrunVal.pop();
+            sTrunVal = aTrunVal.join('');
+        }
+    }
+        if(aPolydram.length == 0){
+        	alert('No Palindrome exists');
+        }else if(aPolydram.length == 1){
+        	alert('No Second Palindrome exists');
+        }else{
+        	aStrLen.sort(function(a,b){
+        		return a-b;
+        	})
+        	var iSecHig=aStrLen[aStrLen.length-2];
+        	var aPolydram=aPolydram.filter(function(ele){
+        		return ele.length == iSecHig;
+        	})
+        	alert(aPolydram[0]);
+
+        }
+    
+ 
+}
+fnFindPalindrome('referrer');
+</script>
